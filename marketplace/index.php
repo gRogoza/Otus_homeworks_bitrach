@@ -23,11 +23,11 @@ $APPLICATION->IncludeComponent(
 		"POPUP_COMPONENT_PARAMS" => array(
 			"SEF_MODE" => "Y",
 			"SEF_FOLDER" => SITE_DIR."marketplace/",
-			"APPLICATION_URL" => SITE_DIR."marketplace/app/#id#/",
+			"APPLICATION_URL" => SITE_DIR."marketplace/App/#id#/",
 			"SEF_URL_TEMPLATES" => array(
 				//"top" => "",
 				"category" => "category/#category#/",
-				"detail" => "detail/#app#/",
+				"detail" => "detail/#App#/",
 				"placement_view" => "view/#APP#/",
 				"placement" => "placement/#PLACEMENT_ID#/",
 				"search" => "search/",

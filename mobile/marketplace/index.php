@@ -37,7 +37,7 @@ if (!empty($_GET['bx24_placementId']))
 }
 
 $APPLICATION->IncludeComponent(
-	"bitrix:app.layout",
+	"bitrix:App.layout",
 	".default",
 	$componentParams,
 	false

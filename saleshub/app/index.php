@@ -19,7 +19,7 @@ $APPLICATION->IncludeComponent(
 	'bitrix:ui.sidepanel.wrapper',
 	'',
 	[
-		'POPUP_COMPONENT_NAME' => 'bitrix:salescenter.app',
+		'POPUP_COMPONENT_NAME' => 'bitrix:salescenter.App',
 		'POPUP_COMPONENT_TEMPLATE_NAME' => '',
 		'POPUP_COMPONENT_PARAMS' => [
 			'dialogId' => $request->get('dialogId'),

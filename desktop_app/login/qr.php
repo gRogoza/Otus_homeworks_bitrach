@@ -122,7 +122,7 @@ if(!$result->isSuccess())
 		[
 			"success" => false,
 			"code" => "application_password_error",
-			"reason" => "Unable to register app password"
+			"reason" => "Unable to register App password"
 		],
 		"403 Forbidden"
 	);

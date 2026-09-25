@@ -650,10 +650,10 @@ $arUrlRewrite=array (
   ),
   22 => 
   array (
-    'CONDITION' => '#^/marketplace/app/#',
+    'CONDITION' => '#^/marketplace/App/#',
     'RULE' => '',
-    'ID' => 'bitrix:app.layout',
-    'PATH' => '/marketplace/app/index.php',
+    'ID' => 'bitrix:App.layout',
+    'PATH' => '/marketplace/App/index.php',
     'SORT' => 100,
   ),
   27 => 

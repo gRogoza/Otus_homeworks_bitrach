@@ -2,10 +2,17 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="444e6ad1-e86d-4b70-84a1-d5e99d939236" name="bitrix academy">
-        <fileTransfer rootFolder="/home/bitrix/www/" accessType="SFTP" host="192.168.0.157" port="22" sshConfigId="21e44186-0eec-43a5-9246-7a957d0d6d11" sshConfig="root@192.168.0.157:22 password">
+      <webServer id="fc759d2a-71b8-4d4e-bc70-cc6f69c7d68f" name="production">
+        <fileTransfer rootFolder="/home/c/ch901554/public_html" accessType="SFTP" host="92.53.96.169" port="22" sshConfigId="83844bed-3abf-4e64-93f1-e43795b79489" sshConfig="ch901554@92.53.96.169:22 password">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="f46087d1-c209-4f2a-94c8-74c6bae3924e" name="local">
+        <fileTransfer rootFolder="/home/bitrix/www" accessType="SFTP" host="192.168.0.157" port="22" sshConfigId="21e44186-0eec-43a5-9246-7a957d0d6d11" sshConfig="root@192.168.0.157:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
         </fileTransfer>
       </webServer>

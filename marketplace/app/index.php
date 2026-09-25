@@ -6,14 +6,14 @@ $APPLICATION->IncludeComponent(
 	"bitrix:ui.sidepanel.wrapper",
 	"",
 	array(
-		"POPUP_COMPONENT_NAME" => "bitrix:app.layout",
+		"POPUP_COMPONENT_NAME" => "bitrix:App.layout",
 		"POPUP_COMPONENT_TEMPLATE_NAME" => ".default",
 		"POPUP_COMPONENT_PARAMS" => array(
 			"COMPONENT_TEMPLATE" => ".default",
 			"DETAIL_URL" => SITE_DIR."marketplace/detail/#code#/",
 			"SEF_MODE" => "Y",
 			"IS_SLIDER" => (\CRestUtil::isSlider() ? "Y" : "N"),
-			"SEF_FOLDER" => SITE_DIR."marketplace/app/",
+			"SEF_FOLDER" => SITE_DIR."marketplace/App/",
 			"SEF_URL_TEMPLATES" => array(
 				"application" => "#id#/",
 			),

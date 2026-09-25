@@ -10,7 +10,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 
 if (Loader::includeModule('mobile') && Loader::includeModule('note'))
 {
-	// KB page sub-path (relative to /note) delivered by the in-app-url route.
+	// KB page sub-path (relative to /note) delivered by the in-App-url route.
 	$entry = EntryParams::resolve(Context::getCurrent()->getRequest()->get('entryPath'));
 	?>
 	<script>

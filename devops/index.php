@@ -7,7 +7,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 	array(
 		"SEF_MODE" => "Y",
 		"SEF_FOLDER" => SITE_DIR."devops/",
-		"APPLICATION_URL" => SITE_DIR."marketplace/app/#id#/",
+		"APPLICATION_URL" => SITE_DIR."marketplace/App/#id#/",
 		"SEF_URL_TEMPLATES" => array(
 			"index" => "",
 			"section" => "section/#SECTION_CODE#/",

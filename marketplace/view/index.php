@@ -3,7 +3,7 @@
 	"bitrix:ui.sidepanel.wrapper",
 	"",
 	array(
-		"POPUP_COMPONENT_NAME" => "bitrix:app.layout",
+		"POPUP_COMPONENT_NAME" => "bitrix:App.layout",
 		"POPUP_COMPONENT_TEMPLATE_NAME" => ".default",
 		"POPUP_COMPONENT_PARAMS" => array(
 			"COMPONENT_TEMPLATE" => ".default",
