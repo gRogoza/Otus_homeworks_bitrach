@@ -1,4 +1,4 @@
-<?php
+<?
 
 use Bitrix\Main\Page\Asset;
 
@@ -12,21 +12,25 @@ Asset::getInstance()->addCss('//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bo
     <h1 class="mb-3"><? $APPLICATION->ShowTitle() ?></h1>
 
     <h4 class="mb-3">Пояснительная записка</h4>
-    <div style="color: darkmagenta;font-style: normal;white-space: pre-line">
-        Были реализованы:
-        классы Log.php и MyException.php(класс логгер и класс исключений /local/App/Debug/Log.php | MyException.php)
-        внутри реаилзованы: метод writ() - формирует строку из даты/времени и метки OTUS, после чего дописывает ее в конец файла, метод clear() - очищает содержимое  файла :
-        автозагрузка  классов реализована через spl_autoload_register() внутри autoload.php.
-        2 файла для заполнения логами - exception_custom.log и log_custom.log
-        внутри otus/students_dz/homework2 изменены 5 файлов
-        index php - страница со ссылками
-        writelog.php - при обращении к файлу по http записывает дату время через класс Log
-        clearlog.php - очищает содержимое
-        writeexception.php - генерирует тестовое исключение MyException, перехватывает его через трай кеч, записывает.
-        clearexception.php - очищает содержимое
+    <div style="color: black;font-style: italic;white-space: pre;">
+        В рамках домашнего задания реализован механизм логгирования обращений к странице и системных исключений средствами php и ядра bitrix D7.
+        Реализованные классы:
+        \Debug\Log.php - наследуется от ExceptionHandlerLog и решает следующе задачи: initialize - вызывается ядром и принимает из настроек путь к файлу лога
+        write - формирует строку, метод принимает и обычный текст и объект исключения
+        clear - очищение файла лога
+        конструктор с необязательным параметром позволяет создавать объект и вручную, c  путем и ядром без аргументов.
+        подключение системного логгера - в .setting.php  в секции exception_handling -> log указаны класс \Debug\Log, файл класса и путь к файлу лога. Теперь любое исключение битрикс перехватывает и передает классу
+        файлы в папке homework2:
+        index php - отображает то что сейчас вы читаете и ссылки
+        writelog.php - при http обращении записывает в log_custom дату и время через Log
+        clearlog - очищает log_custom
+        writeexception - выбрасывает исключение которое автоматически перехватывает системный логгер и записывает в exception_custom.log;
+        clearexception.php очищает exception_custom.log
+        у методов есть PHPDoc
     </div>
+    <br>
+    <br>
     <hr>
-    <div style="color: steelblue;font-style: normal;"></div>
     <div class="card shadow-sm mt-4">
         <div class="card-header bg-success text-white">
             Файлы проекта: Часть 1 - Logger
@@ -36,32 +40,32 @@ Asset::getInstance()->addCss('//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bo
                 <a href="/bitrix/admin/fileman_file_view.php?path=/local/logs/log_custom.log"
                    class="d-flex justify-content-between align-items-center">
                 <span>
-                    это файл логоф
+                    local/logs/log_custom.log
                 </span>
                     <span class="badge bg-success">
-                    log_custom.log
+                    Файл лога из п1 ДЗ
                 </span>
                 </a>
             </li>
             <li class="list-group-item list-group-item-action">
-                <a href="/bitrix/admin/fileman_file_view.php?path=otus/students_dz/homework2/writelog.php"
+                <a href="/bitrix/admin/fileman_file_view.php?path=/otus/students_dz/homework2/writelog.php"
                    class="d-flex justify-content-between align-items-center">
                 <span>
-                   это файл записи в логи
-                </span>
-                    <span class="badge bg-secondary">
                     writelog.php
                 </span>
+                    <span class="badge bg-secondary">
+                    Добавление в лог из п1 ДЗ
+                </span>
                 </a>
             </li>
             <li class="list-group-item list-group-item-action">
-                <a href="/bitrix/admin/fileman_file_view.php?path=otus/students_dz/homework2/clearlog.php"
+                <a href="/bitrix/admin/fileman_file_view.php?path=/otus/students_dz/homework2/clearlog.php"
                    class="d-flex justify-content-between align-items-center">
                 <span>
-                    это файл зачистки логоф
+                    clearlog.php
                 </span>
                     <span class="badge bg-warning">
-                    clearlog.php
+                    Очистить лог из п1 ДЗ
                 </span>
                 </a>
             </li>
@@ -69,10 +73,10 @@ Asset::getInstance()->addCss('//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bo
                 <a href="/bitrix/admin/fileman_file_view.php?path=/local/App/Debug/Log.php"
                    class="d-flex justify-content-between align-items-center">
                 <span>
-                    Класс кастомного Логера
+                    Файл с классом кастомного логгера
                 </span>
                     <span class="badge bg-primary">
-                        Log.php
+                    класс логгера в админке
                 </span>
                 </a>
             </li>
@@ -86,46 +90,46 @@ Asset::getInstance()->addCss('//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bo
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item list-group-item-action">
-                <a href="/bitrix/admin/fileman_file_view.php?path=local/logs/exception_custom.log"
+                <a href="/bitrix/admin/fileman_file_view.php?path=path=/local/logs/exceptions_custom.log"
                    class="d-flex justify-content-between align-items-center">
                 <span>
-                    Файл исключений
+                    local/logs/exceptions.log
                 </span>
                     <span class="badge bg-primary">
-                    exception_custom.log
+                    Файл лога из п2 ДЗ
                 </span>
                 </a>
             </li>
             <li class="list-group-item list-group-item-action">
-                <a href="/bitrix/admin/fileman_file_view.php?path=otus/students_dz/homework2/writeexception.php"
+                <a href="/bitrix/admin/fileman_file_view.php?path=/otus/students_dz/homework2/writeexception.php"
                    class="d-flex justify-content-between align-items-center">
                 <span>
-                    Запись исключений
-                </span>
-                    <span class="badge bg-success">
                     writeexception.php
                 </span>
+                    <span class="badge bg-success">
+                    Добавление в лог из п2 ДЗ
+                </span>
                 </a>
             </li>
             <li class="list-group-item list-group-item-action">
-                <a href="/bitrix/admin/fileman_file_view.php?path=otus/students_dz/homework2/clearexception.php"
+                <a href="/bitrix/admin/fileman_file_view.php?path=/otus/students_dz/homework2/clearexception.php"
                    class="d-flex justify-content-between align-items-center">
                 <span>
-                    Очистка файла исключений
-                </span>
-                    <span class="badge bg-secondary">
                     clearexception.php
                 </span>
+                    <span class="badge bg-secondary">
+                    Очистить лог из п2 ДЗ
+                </span>
                 </a>
             </li>
             <li class="list-group-item list-group-item-action">
-                <a href="/bitrix/admin/fileman_file_view.php?path=local/App/Debug/MyException.php"
+                <a href="/bitrix/admin/fileman_file_view.php?path=/local/App/Debug/Log.php"
                    class="d-flex justify-content-between align-items-center">
                 <span>
-                    класс исключений
+                    Файл с классом системного исключений
                 </span>
                     <span class="badge bg-warning">
-                    MyException.php
+                    класс логгера в админке
                 </span>
                 </a>
             </li>

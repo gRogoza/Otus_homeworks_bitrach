@@ -2,15 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="fc759d2a-71b8-4d4e-bc70-cc6f69c7d68f" name="production">
+      <webServer id="8e348916-1014-4924-a495-1fc0ca92ad3b" name="prod">
         <fileTransfer rootFolder="/home/c/ch901554/public_html" accessType="SFTP" host="92.53.96.169" port="22" sshConfigId="83844bed-3abf-4e64-93f1-e43795b79489" sshConfig="ch901554@92.53.96.169:22 password">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-        </fileTransfer>
-      </webServer>
-      <webServer id="f46087d1-c209-4f2a-94c8-74c6bae3924e" name="local">
-        <fileTransfer rootFolder="/home/bitrix/www" accessType="SFTP" host="192.168.0.157" port="22" sshConfigId="21e44186-0eec-43a5-9246-7a957d0d6d11" sshConfig="root@192.168.0.157:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

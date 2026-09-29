@@ -1,4 +1,4 @@
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php"); ?>
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php"); ?>
 <?php
 $APPLICATION->SetTitle("Добавление в лог");
 ?>
@@ -8,10 +8,8 @@ $APPLICATION->SetTitle("Добавление в лог");
             в лог добавленно 'Открыта страница writelog.php'
         </li>
     </ul>
-<?
-require_once($_SERVER["DOCUMENT_ROOT"] . "/local/App/Debug/Log.php");
-
+<?php
 $logger = new \Debug\Log($_SERVER["DOCUMENT_ROOT"] . "/local/logs/log_custom.log");
-$logger -> write("открыта страница writelog.php");
+$logger -> write("Открыта страница writelog.php");
 ?>
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
