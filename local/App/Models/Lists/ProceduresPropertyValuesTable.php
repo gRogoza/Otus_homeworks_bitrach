@@ -3,8 +3,7 @@
 namespace Models\Lists;
 
 use Models\AbstractIblockPropertyValuesTable;
-
-class CarManufacturerPropertyValuesTable extends AbstractIblockPropertyValuesTable
+class ProceduresPropertyValuesTable
 {
     const IBLOCK_ID = 17;
 }
