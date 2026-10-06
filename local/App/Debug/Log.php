@@ -36,8 +36,7 @@ class Log extends ExceptionHandlerLog
         $line = date('Y-m-d H:i:s') . ' OTUS ' . $message . PHP_EOL;
         file_put_contents($this->filePath, $line, FILE_APPEND);
     }
-
-    /**
+    /** 
      * @return void
      */
     public function clear()

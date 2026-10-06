@@ -2,6 +2,7 @@
 
 namespace Models\Lists;
 
+use CIBlockElement;
 use Models\AbstractIblockPropertyValuesTable;
 use Bitrix\Main\Entity\ReferenceField;
 class DoctorsPropertyValuesTable extends AbstractIblockPropertyValuesTable
@@ -28,7 +29,7 @@ class DoctorsPropertyValuesTable extends AbstractIblockPropertyValuesTable
         }
 
         $ids[] = $procedureId;
-        \CIBlockElement::SetPropertyValuesEx($doctorId, static::IBLOCK_ID,['PROCEDURES'=>$ids]);
+        CIBlockElement::SetPropertyValuesEx($doctorId, static::IBLOCK_ID,['PROCEDURES'=>$ids]);
     }
     public static function getMap(): array
     {
