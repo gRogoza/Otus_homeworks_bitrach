@@ -14,7 +14,7 @@ $APPLICATION->SetTitle(Loc::getMessage('MED_TITLE'));
 
 $request = Application::getInstance()->getContext()->getRequest();
 
-if ($request->isPost() && check_bitrix_sessid()){
+if ($request->isPost()){
     $action = (string)$request->getPost('action');
     $name = trim((string)$request->getPost('name'));
     if ($action === 'add_doctor' && $name!=''){
@@ -55,7 +55,6 @@ if ($doctorId > 0) {
     }
 }
 ?>
-
 <h2><?= Loc::getMessage('MED_DOCTORS') ?></h2>
 <ul>
     <?php foreach ($doctors as $doctor): ?>
@@ -69,7 +68,6 @@ if ($doctorId > 0) {
         </li>
     <?php endforeach; ?>
 </ul>
-
 <?php if ($doctorId > 0): ?>
     <h3><?= Loc::getMessage('MED_PROCEDURES') ?></h3>
     <?php if ($doctorProcedures): ?>
@@ -83,10 +81,10 @@ if ($doctorId > 0) {
     <?php endif; ?>
 <?php endif; ?>
 
+
 <hr>
 <h3><?= Loc::getMessage('MED_ADD_DOCTOR') ?></h3>
 <form method="post">
-    <?= bitrix_sessid_post() ?>
     <input type="hidden" name="action" value="add_doctor">
     <input type="text" name="name" placeholder="<?= Loc::getMessage('MED_NAME') ?>" required>
     <input type="text" name="specialization" placeholder="<?= Loc::getMessage('MED_SPECIALIZATION') ?>">
@@ -95,7 +93,6 @@ if ($doctorId > 0) {
 
 <h3><?= Loc::getMessage('MED_ADD_PROCEDURE') ?></h3>
 <form method="post">
-    <?= bitrix_sessid_post() ?>
     <input type="hidden" name="action" value="add_procedure">
     <input type="text" name="name" placeholder="<?= Loc::getMessage('MED_NAME') ?>" required>
     <button><?= Loc::getMessage('MED_ADD') ?></button>
@@ -103,7 +100,6 @@ if ($doctorId > 0) {
 
 <h3><?= Loc::getMessage('MED_LINK') ?></h3>
 <form method="post">
-    <?= bitrix_sessid_post() ?>
     <input type="hidden" name="action" value="link">
     <select name="doctor_id">
         <?php foreach ($doctors as $d): ?>

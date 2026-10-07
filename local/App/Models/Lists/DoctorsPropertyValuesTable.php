@@ -2,6 +2,9 @@
 
 namespace Models\Lists;
 
+use Bitrix\Main\ArgumentException;
+use Bitrix\Main\ObjectPropertyException;
+use Bitrix\Main\SystemException;
 use CIBlockElement;
 use Models\AbstractIblockPropertyValuesTable;
 use Bitrix\Main\Entity\ReferenceField;
@@ -9,6 +12,13 @@ class DoctorsPropertyValuesTable extends AbstractIblockPropertyValuesTable
 {
     const IBLOCK_ID = 16;
 
+    /**
+     * @param int $doctorId
+     * @return array
+     * @throws ArgumentException
+     * @throws SystemException
+     * @throws ObjectPropertyException
+     */
     public static function getProcedureIds(int $doctorId): array
     {
         $row = static::getList([
@@ -18,6 +28,12 @@ class DoctorsPropertyValuesTable extends AbstractIblockPropertyValuesTable
 
         return array_map('intval',$row['PROCEDURES'] ?? []);
     }
+
+    /**
+     * @param int $doctorId
+     * @param string $procedureId
+     * @return void
+     */
     public static function linkProcedure(int $doctorId, string $procedureId): void
     {
         if ($doctorId <= 0 || $procedureId <= 0) {
@@ -31,6 +47,12 @@ class DoctorsPropertyValuesTable extends AbstractIblockPropertyValuesTable
         $ids[] = $procedureId;
         CIBlockElement::SetPropertyValuesEx($doctorId, static::IBLOCK_ID,['PROCEDURES'=>$ids]);
     }
+
+    /**
+     * @return ReferenceField[]
+     * @throws ArgumentException
+     * @throws SystemException
+     */
     public static function getMap(): array
     {
         return
