@@ -34,14 +34,12 @@ if ($request->isPost() && check_bitrix_sessid()){
     }
 }
 $doctors = DoctorsPropertyValuesTable::getList([
-    'select' => ['ID' => 'IBLOCK_ELEMENT_ID', 'NAME' => 'ELEMENT.NAME
-', 'SPECIALIZATION'],
+    'select' => ['ID' => 'IBLOCK_ELEMENT_ID', 'NAME' => 'ELEMENT.NAME', 'SPECIALIZATION'],
     'order' => ['NAME' => 'ASC'],
 ])->fetchAll();
 
 $allProcedures = ProceduresPropertyValuesTable::getList([
-    'select' => ['ID' => 'IBLOCK_ELEMENT_ID', 'NAME' => 'ELEMENT.NAME
-'],
+    'select' => ['ID' => 'IBLOCK_ELEMENT_ID', 'NAME' => 'ELEMENT.NAME'],
     'order' => ['NAME' => 'ASC'],
 ])->fetchAll();
 
@@ -51,8 +49,7 @@ if ($doctorId > 0) {
     $ids = DoctorsPropertyValuesTable::getProcedureIds($doctorId);
     if ($ids) {
         $doctorProcedures = ProceduresPropertyValuesTable::getList([
-            'select' => ['ID' => 'IBLOCK_ELEMENT_ID', 'NAME' => 'ELEMENT.NAME
-'],
+            'select' => ['ID' => 'IBLOCK_ELEMENT_ID', 'NAME' => 'ELEMENT.NAME'],
             'filter' => ['@IBLOCK_ELEMENT_ID' => $ids],
         ])->fetchAll();
     }
@@ -113,9 +110,7 @@ if ($doctorId > 0) {
             <option value="<?= (int)$d['ID'] ?>"><?= htmlspecialcharsbx($d['NAME']) ?></option>
         <?php endforeach; ?>
     </select>
-    <select name="p
-11:13
-rocedure_id">
+    <select name="procedure_id">
         <?php foreach ($allProcedures as $p): ?>
             <option value="<?= (int)$p['ID'] ?>"><?= htmlspecialcharsbx($p['NAME']) ?></option>
         <?php endforeach; ?>
@@ -124,4 +119,3 @@ rocedure_id">
 </form>
 
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>
-11:13
