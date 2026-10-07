@@ -33,8 +33,9 @@ class DoctorsPropertyValuesTable extends AbstractIblockPropertyValuesTable
     }
     public static function getMap(): array
     {
-        return[
-            'PROCEDURE' => new ReferenceField(
+        return
+        [
+                'PROCEDURE' => new ReferenceField(
                 'PROCEDURE',
                 ProceduresPropertyValuesTable::class,
                 ['=this.PROCEDURES|SINGLE.VALUE' => 'ref.IBLOCK_ELEMENT_ID']
