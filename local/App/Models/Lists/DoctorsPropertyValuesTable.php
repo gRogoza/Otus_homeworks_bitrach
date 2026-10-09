@@ -47,7 +47,6 @@ class DoctorsPropertyValuesTable extends AbstractIblockPropertyValuesTable
         $ids[] = $procedureId;
         CIBlockElement::SetPropertyValuesEx($doctorId, static::IBLOCK_ID,['PROCEDURES'=>$ids]);
     }
-
     /**
      * @return ReferenceField[]
      * @throws ArgumentException

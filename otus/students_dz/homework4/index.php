@@ -1,10 +1,10 @@
-<?
+<?php
 
 use Bitrix\Main\Page\Asset;
 
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php"); ?>
 <?php
-$APPLICATION->SetTitle("ДЗ #4: Создание своих таблиц БД и написание модели данных к ним");
+$APPLICATION -> SetTitle("ДЗ #4: Создание своих таблиц БД и написание модели данных к ним");
 
 Asset::getInstance()->addCss('//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 
