@@ -1,6 +1,6 @@
-/bitrix/*
-/upload/
-.access.php
+        /bitrix/*
+        /upload/
+        .access.php
         .bottom.menu.php
         .department.menu_ext.php
         .gitignore
