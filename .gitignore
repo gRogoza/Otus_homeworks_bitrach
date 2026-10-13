@@ -1,88 +1,52 @@
-        /bitrix/*
-        /upload/
-        .access.php
-        .bottom.menu.php
-        .department.menu_ext.php
-        .gitignore
-        .htaccess
-        .idea/
-        .section.php
-        .top.menu.php
-        .top.menu_ext.php
-        .top_links.menu.php
-        404.php
-        500.html
-        agent_contract/
-        ai/
-        apconnect/
-        auth.php
-        auth/
-        automation/
-        bi/
-        biconnector/
-        bitrix/
-        bizproc/
-        bizprocdesigner/
-        blank.php
-        booking/
-        calendar/
-        call/
-        collaboration/
-        company/
-        conference/
-        configs/
-        crm/
-        departments/
-        desktop.php
-        desktop_app/
-        desktop_menu/
-        devops/
-        docs/
-        favicon.ico
-        gotobot/
-        guest/
-        hr/
-        images/
-        include/
-        index.php
-        index_old.php
-        kb/
-        knowledge/
-        license_restriction.php
-        mail/
-        market/
-        marketing/
-        marketplace/
-        mobile/
-        note/
-        oauth/
-        onec/
-        online/
-        page/
-        pub/
-        report/
-        robots.txt
-        rpa/
-        saleshub/
-        search/
-        services/
-        settings/
-        shop/
-        sign/
-        sitemap/
-        sites/
-        spaces/
-        stream/
-        sync/
-        tasks/
-        telephony/
-        terminal/
-        timeman/
-        urlrewrite.php
-        ustat.php
-        vbox
-        vbox.pub
-        vibe/
-        vote-result/
-        welcome/
-        workgroups/
+/bitrix/
+/upload/
+
+/bitrix/cache/
+/bitrix/managed_cache/
+/bitrix/stack_cache/
+/bitrix/html_pages/
+/bitrix/tmp/
+
+/bitrix/php_interface/dbconn.php
+/.env
+*.local
+
+/.idea/
+/.vscode/
+*.swp
+*.swo
+
+.DS_Store
+Thumbs.db
+
+
+*.log
+*.sql
+*.gz
+*.zip
+*.tar
+*.7z
+*.bak
+*.old
+
+
+/sitemap*.xml
+/robots_*.txt
+
+/node_modules/
+/vendor/
+
+
+/dist/
+/build/
+
+!/local/
+!/local/components/
+!/local/templates/
+!/local/modules/
+
+
+!composer.json
+!composer.lock
+!package.json
+!package-lock.json
