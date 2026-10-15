@@ -1,0 +1,11 @@
+{
+    "name": "g.rogoza/bitrix_local",
+    "description": "Bitrix project with PhpSpreadsheet",
+    "type": "project",
+    "require": {
+        "phpoffice/phpspreadsheet": "^2.0"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
