@@ -163,7 +163,7 @@ abstract class AbstractIblockPropertyValuesTable extends DataManager
      */
     public static function delete($primary): DeleteResult
     {
-        #TODO Implement function
+
         throw new NotImplementedException();
     }
 
@@ -273,15 +273,23 @@ abstract class AbstractIblockPropertyValuesTable extends DataManager
 
         $iblockId = static::IBLOCK_ID;
 
-//         $php = <<<PHP
-// namespace $namespace;
+         $php = <<<PHP
+ namespace $namespace;
 
-// class {$className} extends \Models\AbstractIblockPropertyMultipleValuesTable
-// {
-//     const IBLOCK_ID = {$iblockId};
-// }
+ class {$className} extends \Models\AbstractIblockPropertyMultipleValuesTable
+ {
+     const IBLOCK_ID = {$iblockId};
+ }
 
-// PHP;
-//         eval($php);
+ PHP;
+         eval($php);
     }
 }
+
+includeModuleLangFile (__FILE__);
+$aMenu = array();
+
+if ($APPLICATION -> getGroupRight('abtest') >= 'R')
+    {
+        $aMenu[] = array 
+    }

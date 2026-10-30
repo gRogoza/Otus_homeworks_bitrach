@@ -1,4 +1,4 @@
-<?
+<?php
 // автолоадер проекта
 include_once __DIR__ . '/../App/autoload.php';
 

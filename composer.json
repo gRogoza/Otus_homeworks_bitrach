@@ -1,11 +1,21 @@
 {
-    "name": "g.rogoza/bitrix_local",
-    "description": "Bitrix project with PhpSpreadsheet",
-    "type": "project",
-    "require": {
-        "phpoffice/phpspreadsheet": "^2.0"
+    "name": "bitrix/local",
+    "autoload": {
+        "psr-4": {
+            "Bitrix\\Local\\": "src/"
+        }
     },
-    "config": {
-        "sort-packages": true
-    }
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        },
+        {
+            "packagist.org": false
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^5.3"
+    },
+    "version": "1.0.0"
 }
