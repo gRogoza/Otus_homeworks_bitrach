@@ -1,6 +1,7 @@
 <?php
+
 namespace Models\Lists;
-use ClosedGeneratorException;
+
 use Models\AbstractIblockPropertyValuesTable;
 class DoctorsPropertyValuesMultipleTable
 {
